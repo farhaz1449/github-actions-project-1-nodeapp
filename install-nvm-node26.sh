@@ -8,6 +8,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 nvm install 26
 nvm use 26
 npm install
+npm run format
+npm run format:check
 sudo rm -rf node_modules
 
 
