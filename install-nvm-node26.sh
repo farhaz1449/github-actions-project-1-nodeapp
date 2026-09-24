@@ -12,7 +12,7 @@ npm run format
 ./node_modules/.bin/prettier --write .
 npm run format:check
 npm run ci:local
-npm run format
+npm run format  # One thing to note: don't manually reformat package.json to fix this. Let Prettier do it
 git diff --stat
 sudo rm -rf node_modules
 

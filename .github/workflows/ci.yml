@@ -11,7 +11,8 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     permissions:
       contents: read
@@ -55,14 +56,14 @@ jobs:
           path: coverage/
           if-no-files-found: ignore
 
-      - name: Send CI email
-        if: always()
-        continue-on-error: true
-        env:
-          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          CI_EMAIL_RECIPIENT: ${{ secrets.CI_EMAIL_RECIPIENT }}
-          CI_STATUS: ${{ job.status }}
-        run: node scripts/send-ci-email.js
+      # - name: Send CI email
+      #   if: always()
+      #   continue-on-error: true
+      #   env:
+      #     SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+      #     SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      #     SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+      #     SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      #     CI_EMAIL_RECIPIENT: ${{ secrets.CI_EMAIL_RECIPIENT }}
+      #     CI_STATUS: ${{ job.status }}
+      #   run: node scripts/send-ci-email.js
