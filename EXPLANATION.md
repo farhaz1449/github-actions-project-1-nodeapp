@@ -4,14 +4,14 @@ This document explains the main tools used in this JavaScript GitHub Actions CI 
 
 The JavaScript equivalents of the Python tools from the earlier example are:
 
-| Python Tool | JavaScript Tool        | Purpose                                  |
-| ----------- | ---------------------- | ---------------------------------------- |
-| Flake8      | ESLint                 | Linting and code quality                 |
-| Black       | Prettier               | Automatic code formatting                |
-| Pytest      | Jest                   | Unit testing                             |
-| pytest-cov  | Jest Coverage          | Test coverage                            |
-| Bandit      | eslint-plugin-security | Static security checks/security hotspots |
-| pip-audit   | npm audit              | Dependency vulnerability scanning        |
+| Python Tool | JavaScript Tool | Purpose |
+|---|---|---|
+| Flake8 | ESLint | Linting and code quality |
+| Black | Prettier | Automatic code formatting |
+| Pytest | Jest | Unit testing |
+| pytest-cov | Jest Coverage | Test coverage |
+| Bandit | eslint-plugin-security | Static security checks/security hotspots |
+| pip-audit | npm audit | Dependency vulnerability scanning |
 
 The CI pipeline also uses GitHub Actions for automation and Nodemailer for SMTP email notifications.
 
@@ -44,7 +44,8 @@ Bad code:
 ```javascript
 var total = 10;
 
-if (total == "10") console.log("Matched");
+if (total == "10")
+  console.log("Matched");
 ```
 
 Our ESLint configuration includes rules that prefer:
@@ -142,9 +143,7 @@ A simple way to explain it is:
 Before Prettier:
 
 ```javascript
-function add(a, b) {
-  return a + b;
-}
+function add(a,b){return a+b}
 ```
 
 After Prettier:
@@ -486,7 +485,7 @@ const security = require("eslint-plugin-security");
 and applies:
 
 ```javascript
-security.configs.recommended;
+security.configs.recommended
 ```
 
 ### Run the security scan
@@ -702,7 +701,7 @@ Do not use variables that have not been defined.
 Do not leave unused variables in the code.
 
 ```javascript
-eqeqeq: ["error", "always"];
+eqeqeq: ["error", "always"]
 ```
 
 Prefer:
@@ -785,13 +784,13 @@ It controls:
 In this project:
 
 ```javascript
-testEnvironment: "node";
+testEnvironment: "node"
 ```
 
 means tests run as Node.js tests rather than browser tests.
 
 ```javascript
-collectCoverageFrom: ["src/**/*.js"];
+collectCoverageFrom: ["src/**/*.js"]
 ```
 
 means measure application files under `src/`.

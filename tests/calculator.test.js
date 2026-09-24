@@ -1,4 +1,10 @@
-const { add, subtract, multiply, divide, percentage } = require("../src/calculator");
+const {
+  add,
+  subtract,
+  multiply,
+  divide,
+  percentage,
+} = require("../src/calculator");
 
 describe("calculator", () => {
   test("adds two numbers", () => {

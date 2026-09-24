@@ -9,7 +9,11 @@ nvm install 26
 nvm use 26
 npm install
 npm run format
+./node_modules/.bin/prettier --write .
 npm run format:check
+npm run ci:local
+npm run format
+git diff --stat
 sudo rm -rf node_modules
 
 

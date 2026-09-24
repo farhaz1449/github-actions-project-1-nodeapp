@@ -809,9 +809,7 @@ and rerun.
 Temporarily add badly formatted code such as:
 
 ```javascript
-function hello(name) {
-  return "Hello " + name;
-}
+function hello(name){return "Hello "+name}
 ```
 
 Run:
